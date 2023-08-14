@@ -1,0 +1,196 @@
+@import "../partials/variables.scss";
+@import "../partials/breakpoints.scss";
+
+.site-footer {
+  background: #413f3f;
+  padding: 40px 0;
+  .site-footer__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    @include breakpoint(phone) {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 40px;
+      column-gap: 70px;
+    }
+
+    @include breakpoint(desktop-sm) {
+      display: flex;
+      gap: 60px;
+      justify-content: space-between;
+    }
+
+    &.site-footer__top--grid-1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    &.site-footer__top--grid-2 {
+      @include breakpoint(desktop-sm) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 40px;
+        column-gap: 80px;
+      }
+    }
+
+    h6 {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 144%;
+      letter-spacing: 0.02em;
+      color: inherit;
+      margin-bottom: 25px;
+    }
+
+    p,
+    a {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 22px;
+      letter-spacing: 0.02em;
+      color: inherit;
+      @include breakpoint(phone) {
+      }
+    }
+
+    .site-footer__about {
+      @include breakpoint(phone) {
+        // grid-column: 1/3;
+      }
+      @include breakpoint(desktop-sm) {
+        //grid-column: 1;
+      }
+    }
+
+    .site-footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      @include breakpoint(phone) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 60px;
+      }
+      @include breakpoint(desktop-sm) {
+        gap: 80px;
+      }
+      .site-footer__links__item {
+        a {
+          display: block;
+          &:not(:last-child) {
+            margin-bottom: 27px;
+          }
+        }
+      }
+    }
+
+    .site-footer__offers {
+      p {
+        margin-bottom: 25px;
+      }
+      .site-footer__offers__input {
+        width: 100%;
+        border-bottom: 1px solid #ffffff;
+        border-color: inherit !important;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        input {
+          flex-grow: 1;
+          background-color: transparent;
+          border: 0;
+
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 24px;
+          letter-spacing: 0.02em;
+          text-transform: capitalize;
+          color: inherit;
+
+          @include inputPlaceholder {
+            // color: rgba(255, 255, 255, 0.69);
+            color: inherit;
+            opacity: 0.69;
+          }
+        }
+
+        .search-form__submit {
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+  hr {
+    margin: 30px 0;
+    &.border-color-white {
+      border-top: 1px solid #ffffff;
+    }
+    &.border-color-black {
+      border-top: 1px solid #000000;
+    }
+    @include breakpoint(desktop-sm) {
+      margin: 60px 0;
+    }
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    .site-footer__bottom__row {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &:last-child {
+        flex-direction: column-reverse;
+        gap: 30px;
+      }
+      @include breakpoint(phone) {
+        flex-direction: row;
+        justify-content: space-between;
+        &:last-child {
+          flex-direction: row;
+        }
+      }
+    }
+
+    .site-footer__bottom__row--left-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .site-footer__bottom__social-networks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .site-footer__bottom__powered {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        letter-spacing: 0.02em;
+        color: inherit;
+      }
+    }
+
+    .site-footer__bottom__row--right-side {
+      .site-footer__bottom__cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+  }
+}

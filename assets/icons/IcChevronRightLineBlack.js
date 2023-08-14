@@ -1,0 +1,21 @@
+const IcChevronUpLineBlack = ({ ...props }) => {
+  return (
+    <svg
+      {...props}
+      width="9"
+      height="16"
+      viewBox="0 0 9 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0.777343 1.33329L7.44401 7.99996L0.777344 14.6666"
+        stroke="black"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export default IcChevronUpLineBlack;

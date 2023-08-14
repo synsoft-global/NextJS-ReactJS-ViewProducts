@@ -1,0 +1,143 @@
+@import "../partials/breakpoints.scss";
+@import "../partials/variables.scss";
+
+.myaccount {
+  display: flex;
+  flex-wrap: wrap;
+  .grid__item {
+    float: left;
+    padding-left: 30px;
+    width: 100%;
+    margin-top: 100px;
+  }
+  .myaccount__order-history {
+    flex: 1 0 66.66667%;
+  }
+  .myaccount__account-details {
+    flex: 1 0 33.33333%;
+  }
+  .myaccount__payment-block {
+    margin-bottom: 60px;
+  }
+  h2 {
+    font-size: calc(((var(--font-h2-desktop)) / (var(--font-size-base))) * 1em);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  p {
+    color: var(--color-body-text);
+    margin: 0 0 19.44444px;
+    margin-top: 20px;
+  }
+  .edit_link {
+    padding-top: 20px;
+  }
+}
+
+.section-header {
+  margin-bottom: 10px;
+  margin-top: 90px;
+}
+
+.list--inline {
+  padding: 0;
+  margin: 0;
+}
+
+.list--inline > li {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.page-width {
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+
+.pagination {
+  list-style: none;
+  font-size: 20px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  gap: 20px;
+
+  .li {
+    &.pagination__prev,
+    &.pagination__next {
+      cursor: pointer;
+    }
+  }
+
+  li:first-child {
+    transform: rotate(180deg);
+  }
+}
+
+.pp-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 15px;
+
+  button {
+    &:not(.button) {
+      width: 38px;
+      height: 38px;
+      border: 1px solid #bccadc;
+      border-radius: 100px;
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  .pp-pagination__prev,
+  .pp-pagination__next {
+    border: 1px solid #000000;
+    &[disabled] {
+      border: 1px solid #bccadc;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  .pp-pagination__next {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .pp-pagination__number {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+    &.pp-pagination__number--active {
+      color: #ffffff;
+      background: #000000;
+    }
+
+    &[disabled] {
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  .pagination__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+}

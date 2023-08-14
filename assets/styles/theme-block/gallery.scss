@@ -1,0 +1,74 @@
+@import "../partials/breakpoints.scss";
+@import "../partials/variables.scss";
+// Styling Per Section
+.gallery {
+  @include section-gap();
+
+  &.gallery--grid {
+    .gallery__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      text-align: center;
+
+      @include breakpoint(desktop-sm) {
+        gap: 30px;
+      }
+
+      .gallery__col {
+        @include dark-overlay-image();
+        position: relative;
+        background-size: cover;
+        background-position: center;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        height: 152px;
+
+        @include breakpoint(phone) {
+          height: 344px;
+        }
+        @include breakpoint(desktop-xl) {
+          height: 605px;
+        }
+        .gallery__col__inner {
+          z-index: 1;
+        }
+
+        h3 {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 162%;
+          letter-spacing: 0.06em;
+          color: #ffffff;
+          z-index: 1;
+          margin-bottom: 5px;
+          @include breakpoint(desktop-sm) {
+            font-size: 16px;
+            line-height: 26px;
+            margin-bottom: 10px;
+          }
+        }
+
+        h2 {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 150%;
+          color: #ffffff;
+          z-index: 1;
+
+          @include breakpoint(phone) {
+            font-size: 32px;
+            line-height: 42px;
+          }
+        }
+      }
+    }
+  }
+}

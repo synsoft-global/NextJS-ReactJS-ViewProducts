@@ -1,0 +1,194 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  height: 44px;
+  padding: 0 25px;
+
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #000000;
+  background: transparent;
+  outline: 0;
+
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+
+  transition: all 0.2s ease;
+
+  &.button--border-radius-0 {
+    border-radius: 0;
+  }
+
+  &.button--loading {
+    position: relative;
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .button__icon-spinning {
+      animation: spin 1s infinite linear;
+      position: absolute;
+    }
+
+    .button__start-icon,
+    .button__content,
+    .button__end-icon {
+      visibility: hidden;
+    }
+  }
+
+  // BUTTON VARIANT FILL
+  &.button-orange {
+    background-color: var(--color-orange);
+  }
+  &.button-black {
+    background-color: var(--color-black);
+    color: #fff;
+
+    &[disabled] {
+      background-color: #d5d5d5;
+      color: #868686;
+    }
+  }
+
+  &.button-white {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  // BUTTON VARIANT BORDER
+  &.button-black--border {
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+    background-color: transparent;
+
+    &[disabled] {
+      border: 1px solid #d5d5d5;
+      color: #868686;
+    }
+  }
+  &.button-white--border {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+  }
+
+  &.button-gray--border {
+    border-color: #d5d5d5;
+    color: #868686;
+  }
+
+  // BUTTON VARIANT UNDERLINE
+  @mixin button--underline--base {
+    height: auto;
+    padding: 0;
+    justify-content: flex-start;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-decoration-line: underline;
+    border-radius: 0;
+    font-weight: 400;
+
+    &:focus,
+    &:active,
+    &:hover {
+      outline: 0;
+      border-color: transparent;
+    }
+  }
+  &.button-black--underline {
+    @include button--underline--base();
+    color: #000000;
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: #000000;
+    }
+  }
+
+  &.button-red--underline {
+    @include button--underline--base();
+    color: #ec7a7a;
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: #ec7a7a;
+    }
+  }
+
+  // BUTTON VARIANT ICON
+  &.button-icon {
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    line-height: normal;
+    font-weight: unset;
+    height: auto;
+  }
+
+  // BUTTON VARIANT DISABLED
+  @mixin button--disable-base {
+    color: #868686;
+    cursor: default;
+    pointer-events: none;
+  }
+  &.button--disabled {
+    @include button--disable-base;
+    border-color: #d5d5d5;
+    background-color: #d5d5d5;
+  }
+
+  &.button--disabled--border {
+    @include button--disable-base;
+    border-color: #d5d5d5;
+  }
+
+  &.button--disabled--underline {
+    @include button--disable-base;
+    color: #868686;
+    &:focus,
+    &:active,
+    &:hover {
+      color: #868686;
+    }
+  }
+
+  &.button--disabled--icon {
+    pointer-events: none;
+  }
+
+  // TEXT VARIANT
+  &.button-text--uppercase {
+    text-transform: uppercase;
+  }
+  &.button-text--lowercase {
+    text-transform: lowercase;
+  }
+  &.button-text--capitalize {
+    text-transform: capitalize;
+  }
+  &.button-text--none {
+    text-transform: none;
+  }
+
+  // TEXT SIZE
+  &.fs-12{
+    font-size: 12px;
+  }
+  &.fs-13{
+    font-size: 13px;
+  }
+  &.fs-14{
+    font-size: 14px;
+  }
+  
+}

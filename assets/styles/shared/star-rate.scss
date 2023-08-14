@@ -1,0 +1,26 @@
+.custom-rate {
+  display: flex;
+  .custom-rate-star {
+    cursor: pointer;
+    position: relative;
+    &.is-active,
+    &.will-be-active {
+      svg {
+        path {
+          stroke: #ff8541;
+          fill: #ff8541;
+        }
+      }
+    }
+    &.is-active-half:before {
+      content: "\2605";
+      position: absolute;
+      left: 0;
+      width: 50%;
+      overflow: hidden;
+    }
+    &.is-disabled {
+      cursor: default;
+    }
+  }
+}

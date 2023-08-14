@@ -1,0 +1,88 @@
+@import "../partials/breakpoints.scss";
+@import "../partials/variables.scss";
+
+.image-text-overlay {
+  position: relative;
+  width: 100%;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include dark-overlay-image();
+  @include section-gap();
+
+  .image-text-overlay__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    .image-text-overlay__content__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+      h1 {
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 52px;
+        color: #ffffff;
+        @include breakpoint(phone) {
+          font-size: 72px;
+          line-height: 82px;
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: #ffffff;
+        @include breakpoint(phone) {
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+
+  &.contact-image-text-overlay {
+    min-height: 450px;
+  }
+}
+
+.main-page {
+  .image-text-overlay {
+    &:first-child {
+      margin-top: 0;
+      padding-bottom: 55px;
+      padding-left: 30px;
+      padding-right: 30px;
+      @include breakpoint(phone) {
+        padding-bottom: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+
+    &:not(:first-child) {
+      padding: 55px 30px !important;
+      @include breakpoint(phone) {
+        padding: 115px 30px !important;
+      }
+
+      @include breakpoint(desktop) {
+        padding: 130px 30px !important;
+      }
+    }
+  }
+}

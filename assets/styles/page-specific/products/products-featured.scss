@@ -1,0 +1,108 @@
+@import "/assets/styles/partials/variables.scss";
+@import "/assets/styles/partials/breakpoints.scss";
+.products-featured {
+  padding: 40px 0;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  @include breakpoint(phone) {
+    padding: 60px 0;
+  }
+  @include breakpoint(tablet-lg) {
+    padding: 80px 0;
+  }
+
+  .products-featured__header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 35px;
+    justify-content: space-between;
+    flex-direction: column;
+    grid-gap: 25px;
+
+    @include breakpoint(phone) {
+      flex-direction: row;
+      align-items: center;
+      grid-gap: 0;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 34px;
+      color: #000000;
+
+      @include breakpoint(phone) {
+        font-size: 38px;
+        line-height: 57px;
+      }
+    }
+    .btn-view-all {
+      display: flex;
+      align-items: center;
+      grid-gap: 10px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+      color: #000000;
+      padding: 0;
+    }
+  }
+  .products-carousel {
+    .swiper-container {
+      @include swiperButtonWhiteFill;
+      overflow: unset;
+      position: relative;
+      .swiper-button-prev,
+      .swiper-button-next {
+        transform: unset;
+        top: calc(calc(280px / 2) - 23px);
+        @include breakpoint(phone) {
+          top: calc(calc(260px / 2) - 23px);
+        }
+        @include breakpoint(desktop-sm) {
+          top: calc(calc(393px / 2) - 23px);
+        }
+      }
+      .swiper-button-prev {
+        left: 0;
+        @include breakpoint(phone) {
+          left: -23px;
+        }
+      }
+      .swiper-button-next {
+        right: 0;
+        @include breakpoint(phone) {
+          right: -23px;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -7680px;
+        top: 0;
+        width: 7680px; // 8K resolution
+        height: 100%;
+        background-color: #f5f5f5;
+        z-index: 2;
+      }
+
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 90%;
+
+          @include breakpoint(phone) {
+            width: 40%;
+          }
+          @include breakpoint(tablet-lg) {
+            width: calc(calc(100% - 60px) / 3);
+          }
+
+          a:hover {
+            color: unset;
+          }
+        }
+      }
+    }
+  }
+}

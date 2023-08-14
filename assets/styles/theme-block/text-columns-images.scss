@@ -1,0 +1,781 @@
+@import "../partials/breakpoints.scss";
+@import "../partials/variables.scss";
+.text-columns-images {
+  //text-align: center;
+  @include section-gap();
+
+  .align-left {
+    text-align: left;
+  }
+  .align-center {
+    text-align: center;
+    .button {
+      margin: 0 auto;
+    }
+  }
+
+  &.text-columns-images--grid {
+    h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: #000000;
+      margin-bottom: 30px;
+      @include breakpoint(phone) {
+        font-size: 38px;
+        line-height: 57px;
+      }
+      @include breakpoint(desktop-xl) {
+        font-size: 38px;
+        line-height: 57px;
+      }
+    }
+
+    .text-columns-images__content {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+      @include breakpoint(phone) {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 9px;
+      }
+
+      @include breakpoint(tablet-lg) {
+        gap: 30px;
+      }
+
+      .text-columns-images__product {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include breakpoint(phone) {
+          gap: 30px;
+        }
+
+        .product__image {
+          .product__image__wrapper {
+            display: inline-flex;
+            width: 100%;
+            height: 250px;
+            @include breakpoint(phone) {
+              height: 300px;
+            }
+            @include breakpoint(desktop-xl) {
+              height: 570px;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+          &.product__image--sm {
+            .product__image__wrapper {
+              height: 250px;
+              @include breakpoint(phone) {
+                height: 230px;
+              }
+              @include breakpoint(tablet-lg) {
+                height: 393px;
+              }
+            }
+          }
+          &.product__image--xs {
+            .product__image__wrapper {
+              height: 200px;
+              @include breakpoint(phone) {
+                height: 170px;
+              }
+              @include breakpoint(tablet-lg) {
+                height: 262px;
+              }
+            }
+          }
+        }
+
+        .product__description {
+          h3 {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #000000;
+            margin-bottom: 15px;
+          }
+          p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 21px;
+            color: #626262;
+            margin-bottom: 20px;
+            @include breakpoint(phone) {
+              font-size: 14px;
+              line-height: 24px;
+              margin-bottom: 30px;
+            }
+            @include breakpoint(tablet-lg) {
+              font-size: 18px;
+              line-height: 29px;
+              margin-bottom: 35px;
+            }
+          }
+          .button {
+            width: fit-content;
+          }
+        }
+      }
+    }
+
+    // VARIANT
+    &.columns-images--grid-col-2 {
+      .text-columns-images__content {
+        @include breakpoint(phone) {
+          grid-template-columns: 1fr 1fr;
+          gap: 9px;
+        }
+
+        @include breakpoint(tablet-lg) {
+          gap: 30px;
+        }
+
+        .text-columns-images__product {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          @include breakpoint(phone) {
+            gap: 30px;
+          }
+
+          .product__image {
+            .product__image__wrapper {
+              @include breakpoint(phone) {
+                height: 344px;
+              }
+              @include breakpoint(desktop-xl) {
+                height: 600px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // DON't DETELE it will be use letter
+  &.columns-images--variant4 {
+    .pp-container {
+      padding-right: 0 !important;
+      @include breakpoint(tablet-lg) {
+        padding-right: 30px !important;
+      }
+      @include breakpoint(desktop-sm) {
+        padding-right: 100px !important;
+      }
+    }
+    h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: #000000;
+      margin-bottom: 30px;
+      padding-right: 20px;
+      text-align: left;
+      @include breakpoint(phone) {
+        font-size: 38px;
+        line-height: 57px;
+      }
+      @include breakpoint(tablet-lg) {
+        font-size: 38px;
+        line-height: 57px;
+        padding-right: 0;
+      }
+    }
+
+    .columns-images__content {
+      // display: grid;
+      // grid-template-columns: 1fr;
+      // row-gap: 40px;
+      // @include breakpoint(phone) {
+      //   grid-template-columns: 1fr 1fr;
+      //   gap: 9px;
+      // }
+
+      // @include breakpoint(tablet-lg) {
+      //   gap: 30px;
+      // }
+
+      .swiper-container {
+        @include swiperButtonWhiteFill;
+        .swiper-button-prev,
+        .swiper-button-next {
+          transform: unset;
+          top: 102px;
+          @include breakpoint(phone) {
+            top: 127px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            top: 360px;
+          }
+        }
+        .swiper-button-prev {
+          left: 10px;
+          @include breakpoint(phone) {
+            left: 30px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            left: 40px;
+          }
+        }
+        .swiper-button-next {
+          right: 25px;
+          @include breakpoint(phone) {
+            right: 30px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            right: 40px;
+          }
+        }
+
+        .swiper-wrapper {
+          display: flex;
+          // grid-gap: 20px;
+
+          // @include breakpoint(tablet-lg) {
+          //   display: grid;
+          //   grid-template-columns: 1fr 1fr 1fr;
+          //   row-gap: 40px;
+          // }
+
+          .swiper-slide {
+            width: calc(50% + 80px) !important;
+            &:last-child {
+              padding-right: 20px !important;
+            }
+
+            @media (max-width: 576px) {
+              width: calc(50% + 80px) !important;
+              &:last-child {
+                padding-right: 20px !important;
+              }
+            }
+            @include breakpointMax(phone-sm) {
+              width: 310px !important;
+              &:last-child {
+                padding-right: 0 !important;
+              }
+            }
+            @include breakpoint(phone) {
+              width: calc(33.33% + 30px) !important;
+              &:last-child {
+                padding-right: 20px !important;
+              }
+            }
+            @include breakpoint(tablet-lg) {
+              width: calc(33.33% - 20px) !important;
+              &:last-child {
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+              }
+            }
+            @include breakpoint(desktop-sm) {
+              width: calc(33.33% - 20px) !important;
+              &:last-child {
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+              }
+            }
+          }
+        }
+      }
+
+      .columns-images__product {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include breakpoint(phone) {
+          gap: 30px;
+        }
+
+        .product__image {
+          .product__image__wrapper {
+            display: inline-flex;
+            width: 100%;
+            height: 250px;
+            @include breakpoint(phone) {
+              height: 300px;
+            }
+            @include breakpoint(tablet-lg) {
+              height: 570px;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+        }
+
+        .product__description {
+          text-align: left;
+
+          h3 {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #000000;
+            margin-bottom: 15px;
+          }
+          p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 21px;
+            color: #626262;
+            margin-bottom: 20px;
+            @include breakpoint(phone) {
+              font-size: 14px;
+              line-height: 24px;
+              margin-bottom: 30px;
+            }
+            @include breakpoint(tablet-lg) {
+              font-size: 18px;
+              line-height: 29px;
+              margin-bottom: 35px;
+            }
+          }
+          .button {
+            width: fit-content;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.columns-images--variant5 {
+    .pp-container {
+      @include breakpointMax(phone) {
+        padding-right: 0 !important;
+      }
+    }
+    h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: #000000;
+      margin-bottom: 30px;
+      padding-right: 20px;
+      text-align: left;
+      @include breakpoint(phone) {
+        font-size: 38px;
+        line-height: 57px;
+      }
+      @include breakpoint(tablet-lg) {
+        font-size: 38px;
+        line-height: 57px;
+        padding-right: 0;
+      }
+    }
+
+    .columns-images__content {
+      &.mobile {
+        display: block;
+
+        @include breakpoint(phone) {
+          display: none;
+        }
+      }
+      &.desktop {
+        display: none;
+
+        @include breakpoint(phone) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 30px;
+        }
+      }
+
+      .swiper-container {
+        @include swiperButtonWhiteFill;
+        overflow: unset;
+
+        .swiper-pagination {
+          bottom: -30px;
+
+          .swiper-pagination-bullet {
+            border: 1.5px solid #000000;
+            background-color: transparent;
+            opacity: 1;
+            width: 14px;
+            height: 14px;
+
+            &.swiper-pagination-bullet-active {
+              background-color: #000000;
+            }
+          }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          transform: unset;
+          top: 102px;
+          @include breakpoint(phone) {
+            top: 127px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            top: 360px;
+          }
+        }
+        .swiper-button-prev {
+          left: 10px;
+          @include breakpoint(phone) {
+            left: 30px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            left: 40px;
+          }
+        }
+        .swiper-button-next {
+          right: 25px;
+          @include breakpoint(phone) {
+            right: 30px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            right: 40px;
+          }
+        }
+
+        .swiper-wrapper {
+          display: flex;
+          .swiper-slide {
+            width: calc(50% + 80px) !important;
+            &:last-child {
+              padding-right: 20px !important;
+            }
+
+            @media (max-width: 576px) {
+              width: calc(50% + 80px) !important;
+              &:last-child {
+                padding-right: 20px !important;
+              }
+            }
+            @include breakpointMax(phone-sm) {
+              width: 280px !important;
+              &:last-child {
+                padding-right: 0 !important;
+              }
+            }
+            @include breakpoint(phone) {
+              width: calc(33.33% + 30px) !important;
+              &:last-child {
+                padding-right: 20px !important;
+              }
+            }
+            @include breakpoint(tablet-lg) {
+              width: calc(33.33% - 20px) !important;
+              &:last-child {
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+              }
+            }
+            @include breakpoint(desktop-sm) {
+              width: calc(33.33% - 20px) !important;
+              &:last-child {
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+              }
+            }
+          }
+        }
+      }
+
+      .columns-images__product {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include breakpoint(phone) {
+          gap: 30px;
+        }
+
+        .product__image {
+          .product__image__wrapper {
+            display: inline-flex;
+            width: 100%;
+            // height: 250px;
+            position: relative;
+            &::after {
+              content: "";
+              display: block;
+              padding-bottom: 100%;
+            }
+
+            img {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: 50% 50%;
+            }
+          }
+        }
+
+        .product__description {
+          text-align: left;
+
+          h3 {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #000000;
+            margin-bottom: 15px;
+          }
+          p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 21px;
+            color: #626262;
+            margin-bottom: 20px;
+            @include breakpoint(phone) {
+              font-size: 14px;
+              line-height: 24px;
+              margin-bottom: 30px;
+            }
+            @include breakpoint(tablet-lg) {
+              font-size: 18px;
+              line-height: 29px;
+              margin-bottom: 35px;
+            }
+          }
+          .button {
+            width: fit-content;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  &.columns-images--variant6 {
+    .pp-container {
+      @include breakpointMax(phone) {
+        padding-right: 0 !important;
+      }
+    }
+    h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: #000000;
+      margin-bottom: 30px;
+      padding-right: 20px;
+      text-align: left;
+      @include breakpoint(phone) {
+        font-size: 38px;
+        line-height: 57px;
+      }
+      @include breakpoint(tablet-lg) {
+        font-size: 38px;
+        line-height: 57px;
+        padding-right: 0;
+      }
+    }
+
+    .columns-images__content {
+      &.mobile {
+        display: block;
+
+        @include breakpoint(phone) {
+          display: none;
+        }
+      }
+      &.desktop {
+        display: none;
+
+        @include breakpoint(phone) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 30px;
+        }
+      }
+
+      .swiper-container {
+        @include swiperButtonWhiteFill;
+        overflow: unset;
+
+        .swiper-pagination {
+          bottom: -40px;
+
+          .swiper-pagination-bullet {
+            border: 1.5px solid #000000;
+            background-color: transparent;
+            opacity: 1;
+            width: 14px;
+            height: 14px;
+
+            &.swiper-pagination-bullet-active {
+              background-color: #000000;
+            }
+          }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          transform: unset;
+          top: 102px;
+          @include breakpoint(phone) {
+            top: 127px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            top: 360px;
+          }
+        }
+        .swiper-button-prev {
+          left: 10px;
+          @include breakpoint(phone) {
+            left: 30px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            left: 40px;
+          }
+        }
+        .swiper-button-next {
+          right: 25px;
+          @include breakpoint(phone) {
+            right: 30px;
+          }
+
+          @include breakpoint(desktop-sm) {
+            right: 40px;
+          }
+        }
+
+        .swiper-wrapper {
+          display: flex;
+          .swiper-slide {
+            width: calc(50% + 80px) !important;
+            &:last-child {
+              padding-right: 20px !important;
+            }
+
+            @media (max-width: 576px) {
+              width: calc(50% + 80px) !important;
+              &:last-child {
+                padding-right: 20px !important;
+              }
+            }
+            @include breakpointMax(phone-sm) {
+              width: 280px !important;
+              &:last-child {
+                padding-right: 0 !important;
+              }
+            }
+            @include breakpoint(phone) {
+              width: calc(33.33% + 30px) !important;
+              &:last-child {
+                padding-right: 20px !important;
+              }
+            }
+            @include breakpoint(tablet-lg) {
+              width: calc(33.33% - 20px) !important;
+              &:last-child {
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+              }
+            }
+            @include breakpoint(desktop-sm) {
+              width: calc(33.33% - 20px) !important;
+              &:last-child {
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+              }
+            }
+          }
+        }
+      }
+
+      .columns-images__product {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include breakpoint(phone) {
+          gap: 30px;
+        }
+
+        .product__image {
+          .product__image__wrapper {
+            display: inline-flex;
+            width: 100%;
+            height: 200px;
+            @include breakpoint(phone) {
+              height: 170px;
+            }
+            @include breakpoint(tablet-lg) {
+              height: 262px;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+        }
+
+        .product__description {
+          text-align: left;
+
+          h3 {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #000000;
+            margin-bottom: 15px;
+          }
+          p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 21px;
+            color: #626262;
+            margin-bottom: 20px;
+            @include breakpoint(phone) {
+              font-size: 14px;
+              line-height: 24px;
+              margin-bottom: 30px;
+            }
+            @include breakpoint(tablet-lg) {
+              font-size: 18px;
+              line-height: 29px;
+              margin-bottom: 35px;
+            }
+          }
+          .button {
+            width: fit-content;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

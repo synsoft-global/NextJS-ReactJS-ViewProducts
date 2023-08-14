@@ -1,0 +1,38 @@
+const IcEditBlack = ({ ...props }) => {
+  return (
+    <svg
+      {...props}
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_1459_8946)">
+        <path
+          d="M10.4619 12.0734C10.1865 12.3488 9.83678 12.5378 9.45557 12.6172L7.7337 12.9759C7.31051 13.0641 6.93577 12.6893 7.02394 12.2661L7.38266 10.5443C7.46208 10.1631 7.65106 9.81332 7.92641 9.53797L14.7573 2.70711C15.1478 2.31658 15.781 2.31658 16.1715 2.70711L17.2927 3.82836C17.6833 4.21888 17.6833 4.85205 17.2927 5.24257L10.4619 12.0734Z"
+          stroke="black"
+          strokeWidth="1.3"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M16.6064 10.4415V16.0002C16.6064 17.1047 15.7109 18.0002 14.6064 18.0002H3.99976C2.89519 18.0002 1.99976 17.1047 1.99976 16.0002V5.39355C1.99976 4.28899 2.89519 3.39355 3.99976 3.39355H9.55841"
+          stroke="black"
+          strokeWidth="1.3"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1459_8946">
+          <rect width="20" height="20" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export default IcEditBlack;

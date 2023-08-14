@@ -1,0 +1,150 @@
+@import "../partials/breakpoints.scss";
+@import "../partials/variables.scss";
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .product__thumbnail {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    background-color: #efefef;
+
+    height: 280px;
+    @include breakpoint(phone) {
+      height: 260px;
+    }
+    @include breakpoint(desktop-sm) {
+      height: 393px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .product__label-sale,
+    .product__label-soldout {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 9px 8px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .product__label-sale {
+      background: #ec7a7a;
+    }
+    .product__label-soldout {
+      background: #000000;
+    }
+  }
+  .product__info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+
+    .product__info__main {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      h2 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: #000000;
+        @include breakpoint(phone) {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+
+      .product__info__list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .product__info__price {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        span {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 20px;
+          color: #000000;
+          @include breakpoint(phone) {
+            font-size: 18px;
+            line-height: 27px;
+          }
+        }
+
+        &.product__info__price--sale {
+          span {
+            &:last-child {
+              text-decoration-line: line-through;
+              color: #6f6f6f;
+            }
+          }
+        }
+      }
+
+      .product__info__vendor {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #000000;
+
+        @include breakpoint(phone) {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .product__info__reviews {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .reviews__rate {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 167%;
+        letter-spacing: 0.02em;
+        color: #434343;
+        @include breakpoint(phone) {
+          font-size: 14px;
+          line-height: 171%;
+        }
+
+        span {
+          display: none;
+
+          @include breakpoint(phone) {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.pp-radio {
+  &.form-check {
+    padding-left: 0;
+    margin-bottom: 0;
+    .form-check-input {
+      cursor: pointer;
+      float: unset;
+      margin-left: 0;
+      width: 24px;
+      height: 24px;
+      margin-top: 0;
+      border: 1px solid #d4d4d4;
+      border-radius: 4px;
+      position: relative;
+      background-color: transparent;
+
+      &:checked[type="radio"] {
+        background-image: unset;
+        background-color: transparent;
+        &::after {
+          content: "";
+          width: 16px;
+          height: 16px;
+          border-radius: 2px;
+          background-color: #000000;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        & + label {
+          color: #000000;
+        }
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    label {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.02em;
+      color: #6f6f6f;
+      cursor: pointer;
+      padding-left: 10px;
+    }
+
+    &.form-check-reverse {
+      padding-right: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      .form-check-input {
+        margin-right: 0;
+      }
+      label {
+        padding-left: 0;
+        padding-right: 10px;
+      }
+    }
+  }
+}
